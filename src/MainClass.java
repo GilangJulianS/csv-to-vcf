@@ -39,10 +39,12 @@ public class MainClass {
             w.write("FN:" + name + "\n");
             for(int i=0; i<nums.length; i++){
                 String num = nums[i];
-                if(!num.startsWith("+") || !num.startsWith("0")) num = "0" + num;
+                if(!num.startsWith("+") && !num.startsWith("0")) num = "0" + num;
                 w.write("TEL;CELL:" + num + "\n");
             }
             w.write("END:VCARD\n");
         }
+        w.close();
+        r.close();
     }
 }
